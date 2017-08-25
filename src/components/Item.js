@@ -1,9 +1,10 @@
 import React from 'react'
 import { Avatar } from 'material-ui';
 const style = {
-    height: 100,
-    width: 100,
-    margin: 5
+    height: 150,
+    width: 150,
+    margin: 5,
+    textAlign:'center'
   };
 
   const box = {
@@ -11,15 +12,17 @@ const style = {
   }
 
   const Item = (props)=>{
+      const ani = `animated ${props.animation} ${props.infinite}`
         return(
             <div style={box}>
 
                 <Avatar
-                    src="https://media.giphy.com/media/gTYvXo3ZVi7w4/giphy.gif"
+                    className={ani}
+                    src={props.gif}
                     size={20}
                     style={style}
                 />
-                <h1 className="amatic">Richardo</h1>
+                <h1 className="amatic">{props.name}</h1>
             </div>
              
         )
